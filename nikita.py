@@ -10,11 +10,11 @@ def init_directory():
     return library_dir
 
 def download_library(ssh_address, library_dir):
-    cmd = f'scp -r ubuntu@{ssh_address}:~/server_library {library_dir}/'
+    cmd = f'scp -r ubuntu@{ssh_address}:~/nikita_library/* {library_dir}/'
     subprocess.run(cmd, shell=True)
 
 def upload_library(ssh_address, library_dir):
-    cmd = f'scp -r {library_dir} ubuntu@{ssh_address}:~/'
+    cmd = f'scp -r {library_dir}/* ubuntu@{ssh_address}:~/nikita_library/'
     subprocess.run(cmd, shell=True)
 
 def log_activity(action, library_dir):
